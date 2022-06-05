@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVIÇO</title>
+</head>
+
+<body>
+    <center>
+        <h1>SIMULADOR</h1>
+        <!-- Simula registro do hardware que será o responsável pela chamada do método 'cadastrarNovoEvento( )'-->
+        <p><b>Simula registro (hardware) que fará a chamada do método 'cadastrarNovoEvento( )'</b></p>
+        <label>Nome Usuário</label><br><br>
+        <input type="text" id="nomeUsuario"><br><br>
+        <button onclick="cadastrarNovoEvento()">REGISTRO DO CARTÂO</button><br><br>
+        <!-- Simula TRT que será a responsável pela chamada do método 'listarTodosEventosSalvos( )'-->
+        <p><b>Simula TRT que será a responsável pela chamada do método 'listarTodosEventosSalvos( )</b>'</p>
+        <button onclick="listarTodosEventosSalvos()">LISTAR TUDO</button><br><br>
+        <div id="listar"></div>
+        <!-- Simula usuário 'admin' (na TRT) que é o único que pode chamar o método 'deletarEventoPorId( )'-->
+        <p><b>Simula usuário 'admin' chamadando método 'deletarEventoPorId( )'</b></p>
+        <label>ID de registro para deletar</label><br><br>
+        <input type="text" id="idRegistroDeletar"><br><br>
+        <button onclick="deletarEventoPorId()">DELETAR REGISTRO</button>
+
+    </center>
+    <script src="CRUDService.js"></script>
+</body>
+
+</html>
