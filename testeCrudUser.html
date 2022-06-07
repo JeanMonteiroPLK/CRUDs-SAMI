@@ -31,32 +31,54 @@
         <button onclick="cadastrarNovoUsuario()">CADASTRAR</button><br><br>
         
         <label>POSSUI RESPONSÁVEL?</label>
-        <select name="responsavel" id="responsavel">
-            <option value="sim" selected>SIM</option>
+        <select name="responsavel" id="responsavel" onchange="if(value == 'sim') inputsCadastroResponsavel(); else HTMLnull()">
+            <option value="" disabled selected>Selecione...</option>
+            <option value="sim">SIM</option>
             <option value="nao">NÃO</option>
         </select>
         
+        <div id="inputsCadastroResponsavel"></div>
+
         <h2>LISTAR USUÁRIOS</h2>
         <button onclick="listarTodosUsuariosSalvos()">LISTAR</button><br><br>
         <div id="listar"></div>
+
+        <!--
+        <h2>BUSCAR USUÁRIO POR ID</h2>
+        <label>ID PARA BUSCAR</label><br>
+        <input id="idParaBuscar" type="text"><br><br>
+        <button onclick="buscarUsuarioPorId()">BUSCAR</button><br><br>
+
+        <h2>BUSCAR USUÁRIO POR NOME</h2>
+        <label>NOME PARA BUSCAR</label><br>
+        <input id="nomeParaBuscar" type="text"><br><br>
+        <button onclick="buscarUsuarioPorNome()">BUSCAR</button><br><br>
+
+        <h2>BUSCAR USUÁRIO POR CPF</h2>
+        <label>CPF PARA BUSCAR</label><br>
+        <input id="cpfParaBuscar" type="text"><br><br>
+        <button onclick="buscarUsuarioPorCpf()">BUSCAR</button><br><br>
 
         <h2>DELETAR USUÁRIO</h2>
         <label>ID DO USUÁRIO</label><br>
         <input id="idParaDeletar" type="text"><br><br>
         <button onclick="deletarUsuarioPorId()">DELETAR</button>
+        -->
 
         <h2>EDITAR USUÁRIO</h2>
+        <label>ID DO USUÁRIO</label><br>
+        <input id="idParaEditar" type="text"><br><br>
         <label>QUAL CAMPO DESEJA EDITAR?</label><br>
-        <select name="atributo" id="atributo">
-            <option value="nome" selected>NOME</option>
+        <select name="atributo" id="atributo" onchange="if(value == 'endereco') selectEndereco(); else HTMLnull()">
+            <option value="" disabled selected>Selecione...</option>
+            <option value="nome">NOME</option>
             <option value="cpf">CPF</option>
             <option value="senha">SENHA</option>
-            
-            <!-- Validar com Lucas sobre como abrir um novo <select> a partir dessa única <option>
             <option value="endereco">ENDEREÇO</option>
-            -->
-
         </select><br><br>
+
+        <div id="selectAtributosEndereco"></div>
+        
         <label>NOVO VALOR</label><br>
         <input id="novoValorEditar" type="text"><br><br>
         <button onclick="editarUsuario()">EDITAR</button>
